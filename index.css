@@ -50,3 +50,7 @@ body, html {
 #homePage .userForm .button:hover{
   background-color: #09a2a3;
 }
+
+#champSelect{
+  display: none;
+}
