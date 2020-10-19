@@ -1,7 +1,7 @@
 {
-  "name": "testapp",
+  "name": "LoLTryHard",
   "version": "1.0.0",
-  "description": "test electron application",
+  "description": "League of Legends TryHard Desktop Application",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
@@ -10,5 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^10.1.2"
+  },
+  "dependencies": {
+    "python-shell": "^2.0.2"
   }
 }

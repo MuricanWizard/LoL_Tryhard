@@ -7,6 +7,9 @@
   <link href="index.css" rel="stylesheet">
 </head>
 <body>
+  <main id="initialize">
+    Initializing....
+  </main>
   <main id="homePage">
     <section class="logo">
       <img class="logo-img" src="images/logo1.png">
@@ -22,7 +25,6 @@
         <label class="labelTitle" for="sName">Summoner Name</label><br>
         <input aria-label="Summoner Name" class="labelInput" type="text" id="sName" name="sName"><br>
         <br>
-        <br>
         <label class="labelTitle" for="region">Region</label><br>
         <select id="region" name="region">
           <option value="NA">North America</option>
@@ -31,12 +33,24 @@
         </select>
         <br>
         <br>
-        <a class="button" onclick="switchToChampSelect();">Submit</a>
+        <label class="labelTitle" for="filePath">Game Folder Path</label><br>
+        <input aria-label="Game Folder Path" class="labelInput" type="text" id="filePath" name="filePath" value = "C:/Riot Games/League of Legends"><br>
+        <br>
+        <br>
+        <a class="button" onclick="switchToChampSelect();">Get Started</a>
       </form>
+      <br>
+      <br>
+      <br>
     </section>
   </main>
   <main id="champSelect">
-
+    <div id="waiting">
+      Waiting for Champ Selection phase to end....
+    </div>
+    <div id="textArea">
+      <span id="text">Data: </span>
+    </div>
   </main>
 </body>
 <script src="index.js"></script>

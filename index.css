@@ -40,7 +40,7 @@ body, html {
   display: inline-block;
   padding: 8px;
   font-weight: 400;
-  width: 100px;
+  width: 150px;
   border-radius: 15px;
   cursor: pointer;
   transition: all .2s linear;
@@ -52,5 +52,20 @@ body, html {
 }
 
 #champSelect{
+  font-family: 'Roboto Condensed', sans-serif;
   display: none;
+}
+
+#champSelect #waiting{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  font-size: 35px;
+}
+
+#champSelect #textArea{
+  display: block;
 }
