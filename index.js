@@ -47,7 +47,7 @@ function sendToPython() {
       // results is an array consisting of messages collected during execution
       console.log('results: ', results.toString());
       x = results.toString();
-      document.getElementById('text').innerHTML += x;
+      document.getElementById('waiting').innerHTML = x;
       return results.toString();
     }});
 

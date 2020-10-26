@@ -66,6 +66,27 @@ body, html {
   font-size: 35px;
 }
 
+#champSelect #waiting .button{
+  text-decoration: none;
+  color: #f0e6d2;
+  background-color: #1e2328;
+  border: 2px solid #09a2a3;
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  padding: 8px;
+  font-weight: 400;
+  width: 150px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all .2s linear;
+  font-size: 15px;
+}
+
+#champSelect #waiting .button:hover{
+  background-color: #09a2a3;
+}
+
 #champSelect #textArea{
   display: block;
 }
