@@ -16,7 +16,7 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 warnings.filterwarnings("ignore")
 
-champions = requests.get("http://ddragon.leagueoflegends.com/cdn/10.16.1/data/en_US/champion.json")
+champions = requests.get("http://ddragon.leagueoflegends.com/cdn/10.22.1/data/en_US/champion.json")
 #Champion Dictionary
 ChampionKeyTable = {}
 for i in champions.json()['data']:
@@ -262,6 +262,6 @@ print("<br>")
 '''
 pred = loaded_model.predict_classes(np.array([compStats,]))[0]
 if(pred == 1):
-    print("Your team has a composition advantage. Your chances of winning are higher than the enemy's. GO ALL OUT<br><br><a class='button' onClick = 'getPlayerStats();'>GET PLAYER STATS</a>")
+    print("Your team has a composition advantage. Your chances of winning are higher than the enemy's.<br>GO ALL OUT<br><br><a class='button' onClick = 'getPlayerStats();'>GET PLAYER STATS</a>")
 elif(pred == 0):
-    print("The enemy team has a composition advantage. Your chances of winning are lower than the enemy's. PLAY SAFE<br><br><a class='button' onClick = 'getPlayerStats();'>GET PLAYER STATS</a>")
+    print("The enemy team has a composition advantage. Your chances of winning are lower than the enemy's.<br>PLAY SAFE<br><br><a class='button' onClick = 'getPlayerStats();'>GET PLAYER STATS</a>")

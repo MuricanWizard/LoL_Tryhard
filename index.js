@@ -70,4 +70,26 @@ function sendToPython() {
     });
   }
 
+  function getPlayerStats(){
+    let options = {
+      mode: 'text',
+      args: [0]
+    };
+
+    x = "Waiting for the Game to begin...";
+    document.getElementById('waiting').innerHTML = x;
+
+    PythonShell.run('./getRitoData.py', options, function (err, results) {
+      if (err){
+        document.getElementById('text').innerHTML += err.toString();
+      }
+      else{
+        // results is an array consisting of messages collected during execution
+        console.log('results: ', results.toString());
+        x = results.toString();
+        document.getElementById('waiting').innerHTML = x;
+        return results.toString();
+      }});
+  }
+
   initialize();
