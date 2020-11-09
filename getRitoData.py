@@ -23,12 +23,16 @@ for i in gameData:
 playerIDs = []
 summonerLevels = []
 for i in range(10):
-    response = requests.get("https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+summoners[i]+"?api_key="+api_key)
-    userID = response.json()["id"]
-    puuid = response.json()["puuid"]
-    summonerLevel = response.json()["summonerLevel"]
-    playerIDs.append(userID)
-    summonerLevels.append(summonerLevel)
+    try:
+        response = requests.get("https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/"+summoners[i]+"?api_key="+api_key)
+        userID = response.json()["id"]
+        puuid = response.json()["puuid"]
+        summonerLevel = response.json()["summonerLevel"]
+        playerIDs.append(userID)
+        summonerLevels.append(summonerLevel)
+    except:
+        playerIDs.append("NA")
+        summonerLevels.append("NA")
 
 champSet = set(("Aurelion Sol", "Cho'Gath", "Dr. Mundo", "Jarvan IV", "Kai'Sa", "Kha'Zix", "Lee Sin", "Kog'Maw", "Miss Fortune", "Nunu & Willump", "Rek'Sai", "Tahm Kench", "Twisted Fate", "Vel'Koz", "Xin Zhao", 'LeBlanc', 'Wukong', 'Master Yi'))
 champConvertDict = {
@@ -66,9 +70,13 @@ for i in champs:
 champLevels = []
 champPoints = []
 for i in range(10):
-    stats = requests.get('https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/'+str(playerIDs[i])+'/by-champion/'+str(champIDs[i])+'?api_key='+str(api_key)).json()
-    champLevels.append(stats['championLevel'])
-    champPoints.append(stats['championPoints'])
+    try:
+        stats = requests.get('https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/'+str(playerIDs[i])+'/by-champion/'+str(champIDs[i])+'?api_key='+str(api_key)).json()
+        champLevels.append(stats['championLevel'])
+        champPoints.append(stats['championPoints'])
+    except:
+        champLevels.append('NA')
+        champPoints.append('NA')
 
 ranks = []
 for i in playerIDs:
@@ -83,7 +91,10 @@ for i in playerIDs:
 
 s = "<table id='summoners'><tr><th>Summoner Name</th><th>Team</th><th>Rank</th><th>Level</th><th>Champion</th><th>Champion Mastery Level</th><th>Champion Mastery Points</th></tr>"
 for i in range(10):
-    s += "<tr id='ally'>"
+    if(i < 5):
+        s += "<tr id='ally'>"
+    else:
+        s += "<tr>"
     s += "<td>"+str(summoners[i])+"</td>"
     if(i < 5):
         s += "<td>"+str(1)+"</td>"
