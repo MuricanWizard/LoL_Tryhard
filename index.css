@@ -90,3 +90,28 @@ body, html {
 #champSelect #textArea{
   display: block;
 }
+
+#summoners {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#summoners td, #summoners th {
+  border: 3px solid #09a2a3;
+  padding: 8px;
+}
+
+#summoners tr:hover {background-color: #ddd;}
+
+#summoners th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #1e2328;
+  color: white;
+}
+
+#summoners #ally td{
+  background-color: #ddd;
+}
