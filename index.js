@@ -28,6 +28,12 @@ function switchToChampSelect(){
   }
 }
 
+function goHome(){
+  document.getElementById('homePage').style.display = "block";
+  document.getElementById('champSelect').style.display = "none";
+  document.getElementById('waiting').innerHTML = "Waiting for Champ Selection phase to end....<br><br><a class='button' onClick = 'goHome();'>Cancel</a>";
+}
+
 function getLeagueData(){
   const url = 'https://127.0.0.1:2999/liveclientdata/playerlist';
   fetch(url).then(response => response.json()).then(data => console.log(data));

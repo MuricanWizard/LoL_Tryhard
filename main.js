@@ -14,4 +14,8 @@ function createWindow () {
   win.loadFile('index.html')
 }
 
+function reloadApp(){
+  win.loadFile('index.html')
+}
+
 app.whenReady().then(createWindow)

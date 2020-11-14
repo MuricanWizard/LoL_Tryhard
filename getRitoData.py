@@ -108,5 +108,4 @@ for i in range(10):
     s += "</tr>"
 s += "</table>"
 
-print(s)
-    
+print(str(s))
